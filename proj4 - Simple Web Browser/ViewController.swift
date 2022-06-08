@@ -26,13 +26,20 @@ class ViewController: UIViewController, WKNavigationDelegate{
         webView.load(URLRequest(url: url))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
+        
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
+        
         let progressButton = UIBarButtonItem(customView: progressView)
+        
         let fwdButton = UIBarButtonItem(barButtonSystemItem: .fastForward, target: webView, action: #selector(webView.goForward))
+        
         let backButton = UIBarButtonItem(barButtonSystemItem: .rewind, target: webView, action: #selector(webView.goBack))
+        
         toolbarItems = [backButton, fwdButton, progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
