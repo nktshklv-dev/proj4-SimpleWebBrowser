@@ -40,7 +40,7 @@ class ViewController: UIViewController, WKNavigationDelegate{
         
         let backButton = UIBarButtonItem(barButtonSystemItem: .rewind, target: webView, action: #selector(webView.goBack))
         
-        toolbarItems = [backButton, fwdButton, progressButton, spacer, refresh]
+        toolbarItems = [backButton, fwdButton, spacer, progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
